@@ -1,18 +1,35 @@
 # LeetCodeDaily
-Website to track LeetCode progress with friends.
 
-My friends and I started with a basic spreadsheet to track our LeetCode progress and for mutual accountability. This quickly became kind of cumbersome, leading to the creation of the LeetCodeDaily (aka LCD) site. Still in the development stage, but on its way to deployment :)
+**LeetCodeDaily** (LCD) is a web application designed to track LeetCode progress with friends, fostering mutual accountability in coding practice.
 
-I had some past experience with Flask, so decided to go ahead with the same. Might try porting to a more modern framework like Next/Node JS or the like.
+## Background
 
-Features of LCDv5:
-- add questions using LeetCode titles (like "1. Two Sum")
-- questions added to the current day (according to UTC, which is what LeetCode follows)
-- remove questions in case of accidental addition
-- hyperlinked questions to the actual LeetCode problem page - helps easily try out what the others are solving
+My friends and I initially used a simple spreadsheet to monitor our LeetCode progress, but this method quickly became cumbersome. To address this, we developed the LeetCodeDaily website, which is currently in the development stage and on its way to deployment! 🚀
 
-Here is how LCDv5 looks:
-![image](https://github.com/user-attachments/assets/8383d78d-e99f-494a-ad65-c13d0877a109)
+Having some previous experience with Flask, I decided to build this application using the same framework. In the future, I may consider porting it to a more modern framework like Next.js or Node.js.
 
-Adding question entries:
-![image](https://github.com/user-attachments/assets/35a8ae28-eb1e-4e22-870b-36265a17744d)
+## Features of LCD v5
+
+- **Add Questions**: Easily add questions using their LeetCode titles (e.g., "1. Two Sum").
+- **Daily Tracking**: Questions are added for the current day, aligning with UTC, which is the standard used by LeetCode.
+- **Remove Questions**: Accidental additions can be easily removed.
+- **Hyperlinked Questions**: Each question is hyperlinked to its corresponding LeetCode problem page, allowing users to quickly access and solve problems.
+
+## Screenshots
+
+### Main Dashboard
+![Main Dashboard](https://github.com/user-attachments/assets/8383d78d-e99f-494a-ad65-c13d0877a109)
+
+### Adding Question Entries
+![Adding Question Entries](https://github.com/user-attachments/assets/35a8ae28-eb1e-4e22-870b-36265a17744d)
+
+```
+## Getting Started
+
+To get started with LeetCodeDaily, clone the repository and install the necessary dependencies. 
+
+```bash
+git clone <repository-url>
+cd LeetCodeDaily
+pip install -r requirements.txt
+```
