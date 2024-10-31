@@ -4,7 +4,7 @@
 
 ## Background
 
-My friends and I started with a basic spreadsheet to track our LeetCode progress and for mutual accountability. This quickly became kind of cumbersome, leading to the creation of the LeetCodeDaily (aka LCD) site. Still in the development stage, but on its way to deployment :)
+My friends and I started with a basic spreadsheet to track our LeetCode progress and for mutual accountability. This quickly became kind of cumbersome, leading to the creation of LeetCodeDaily. Still in the development stage, but on its way to deployment :)
 
 Having some previous experience with Flask, I decided to build this application using the same framework. In the future, I may consider porting it to a more modern framework like Next.js or Node.js.
 
