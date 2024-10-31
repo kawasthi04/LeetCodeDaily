@@ -13,3 +13,6 @@ Features of LCDv5:
 Here is how LCDv5 looks:
 ![image](https://github.com/user-attachments/assets/8383d78d-e99f-494a-ad65-c13d0877a109)
 
+![image](https://github.com/user-attachments/assets/35a8ae28-eb1e-4e22-870b-36265a17744d)
+
+
