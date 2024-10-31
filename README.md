@@ -1,4 +1,4 @@
-# LeetCodeDaily
+![image](https://github.com/user-attachments/assets/fd93f612-b77d-4c17-bfee-b9b8cd2b2f67)# LeetCodeDaily
 
 **LeetCodeDaily** (LCD) is a website to track LeetCode progress with friends.
 
@@ -18,7 +18,8 @@ Having some previous experience with Flask, I decided to build this application 
 ## Screenshots
 
 ### Main Dashboard
-![Main Dashboard](https://github.com/user-attachments/assets/8383d78d-e99f-494a-ad65-c13d0877a109)
+![Main Dashboard](https://github.com/user-attachments/assets/25f4a10b-6695-4e11-b238-9bb2f1cc8512)
+
 
 ### Adding Question Entries
 ![Adding Question Entries](https://github.com/user-attachments/assets/35a8ae28-eb1e-4e22-870b-36265a17744d)
