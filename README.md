@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/fd93f612-b77d-4c17-bfee-b9b8cd2b2f67)# LeetCodeDaily
+# LeetCodeDaily
 
 **LeetCodeDaily** (LCD) is a website to track LeetCode progress with friends.
 
