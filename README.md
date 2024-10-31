@@ -18,8 +18,7 @@ Having some previous experience with Flask, I decided to build this application 
 ## Screenshots
 
 ### Main Dashboard
-![Main Dashboard](https://github.com/user-attachments/assets/25f4a10b-6695-4e11-b238-9bb2f1cc8512)
-
+![Main Dashboard](https://github.com/user-attachments/assets/aa46b4f4-10ef-4386-bede-4c9a21cc3079)
 
 ### Adding Question Entries
 ![Adding Question Entries](https://github.com/user-attachments/assets/35a8ae28-eb1e-4e22-870b-36265a17744d)
