@@ -1,7 +1,7 @@
 # LeetCodeDaily
 Website to track LeetCode progress with friends.
 
-My friends and I started with a basic spreadsheet to track our LeetCode progress and for mutual accountability. This quickly became kind of cumbersome, leading to the creation of the LeetCodeDaily (aka LCD) site. Still in the development stage, but on it's way to deployment :)
+My friends and I started with a basic spreadsheet to track our LeetCode progress and for mutual accountability. This quickly became kind of cumbersome, leading to the creation of the LeetCodeDaily (aka LCD) site. Still in the development stage, but on its way to deployment :)
 
 I had some past experience with Flask, so decided to go ahead with the same. Might try porting to a more modern framework like Next/Node JS or the like.
 
