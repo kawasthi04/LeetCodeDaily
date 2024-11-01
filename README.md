@@ -1,6 +1,6 @@
 # <span style="color: #16a278">𝙻𝚎𝚎𝚝</span><span style="color: #efa41e">𝙲𝚘𝚍𝚎</span><span style="color: #b62223">𝙳𝚊𝚒𝚕𝚢</span>
 
-**LeetCodeDaily** (LCD) is a website to track LeetCode progress with friends.
+**LeetCodeDaily** (LCD): track LeetCode progress with friends
 
 ## Background
 
