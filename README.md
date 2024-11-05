@@ -10,7 +10,7 @@ Having some previous experience with Flask, I decided to build this application 
 
 ## Features of LCD v5
 
-- **Add Questions**: Easily add questions using their LeetCode titles (e.g., "1. Two Sum").
+- **Add Questions**: Easily add questions using their LeetCode titles (e.g., "1. Two Sum") and select its difficulty.
 - **Daily Tracking**: Questions are added for the current day, aligning with UTC, which is the standard used by LeetCode.
 - **Remove Questions**: Accidental additions can be easily removed.
 - **Hyperlinked Questions**: Each question is hyperlinked to the actual LeetCode problem page - helps easily try out what the others are solving.
