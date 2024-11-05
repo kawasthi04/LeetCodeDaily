@@ -1,144 +1,116 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LCD</title>
+    <title>Streak Tracker</title>
     <link
       rel="stylesheet"
-      href="{{ url_for('static', filename='css/styles5b.css') }}"
+      type="text/css"
+      href="{{ url_for('static', filename='css/styles.css') }}"
     />
-    <link rel="icon" type="image/x-icon" href="static\favicon2.svg" />
   </head>
   <body>
-    <!--<h1>𝕃ℂ𝔻 ~ 𝕃𝕖𝕖𝕥ℂ𝕠𝕕𝕖𝔻𝕒𝕚𝕝𝕪</h1>-->
-    <!--<h1>🅛🅒🅓 ~ 🅛🅔🅔🅣🅒🅞🅓🅔🅓🅐🅘🅛🅨</h1>-->
-    <!--<h1>ⓁⒸⒹ ~ ⓁⓔⓔⓣⒸⓞⓓⓔⒹⓐⓘⓛⓨ</h1>-->
-    <!--<h1>𝙻𝙲𝙳 ~ 𝙻𝚎𝚎𝚝𝙲𝚘𝚍𝚎𝙳𝚊𝚒𝚕𝚢</h1>-->
     <h1>
-      <!--<span style="color: #16A278;">𝕃𝕖𝕖𝕥</span><span style="color: #EFA41E;">ℂ𝕠𝕕𝕖</span><span style="color: #B62223;">𝔻𝕒𝕚𝕝𝕪</span>-->
       <span style="color: #16a278">𝙻𝚎𝚎𝚝</span
       ><span style="color: #efa41e">𝙲𝚘𝚍𝚎</span
       ><span style="color: #b62223">𝙳𝚊𝚒𝚕𝚢</span>
     </h1>
+
     <div class="container">
-      <!-- Table Section -->
-      <div class="table-section">
-        <table>
-          <thead>
-            <tr>
-              <th>Date</th>
-              <th>Saketh</th>
-              <th>Aditya</th>
-              <th>Kushagra</th>
-            </tr>
-          </thead>
-          <tbody>
-            {% for entry in data %}
-            <tr>
-              <td class="date-cell">{{ entry['Date'] }}</td>
-              <td
-                class="{% if entry['Saketh_questions']|length > 0 %} Completed {% else %} Missed {% endif %}"
-              >
-                {% if entry['Saketh_questions']|length > 0 %} {% for question,
-                url, difficulty in entry['Saketh_questions'] %}
-                <div class="question-container">
-                  <span
-                    class="delete-btn"
-                    onclick="deleteQuestion('{{ entry['Date'] }}', '{{ question }}', 'Saketh')"
-                  ></span>
-                  <a
-                    href="{{ url }}"
-                    target="_blank"
-                    class="{{ difficulty.strip() }}"
-                    >{{ question.split('.')[0] }}</a
-                  >
-                </div>
-                {% endfor %} {% else %} missed :'( {% endif %}
-              </td>
-              <td
-                class="{% if entry['Aditya_questions']|length > 0 %} Completed {% else %} Missed {% endif %}"
-              >
-                {% if entry['Aditya_questions']|length > 0 %} {% for question,
-                url, difficulty in entry['Aditya_questions'] %}
-                <div class="question-container">
-                  <span
-                    class="delete-btn"
-                    onclick="deleteQuestion('{{ entry['Date'] }}', '{{ question }}', 'Aditya')"
-                  ></span>
-                  <a
-                    href="{{ url }}"
-                    target="_blank"
-                    class="{{ difficulty.strip() }}"
-                    >{{ question.split('.')[0] }}</a
-                  >
-                </div>
-                {% endfor %} {% else %} missed :'( {% endif %}
-              </td>
-              <td
-                class="{% if entry['Kushagra_questions']|length > 0 %} Completed {% else %} Missed {% endif %}"
-              >
-                {% if entry['Kushagra_questions']|length > 0 %} {% for question,
-                url, difficulty in entry['Kushagra_questions'] %}
-                <div class="question-container">
-                  <span
-                    class="delete-btn"
-                    onclick="deleteQuestion('{{ entry['Date'] }}', '{{ question }}', 'Kushagra')"
-                  ></span>
-                  <a
-                    href="{{ url }}"
-                    target="_blank"
-                    class="{{ difficulty.strip() }}"
-                    >{{ question.split('.')[0] }}</a
-                  >
-                </div>
-                {% endfor %} {% else %} missed :'( {% endif %}
-              </td>
-            </tr>
-            {% endfor %}
-          </tbody>
-        </table>
+      <!-- Form to add a new user -->
+      <div class="form-section">
+        <h2>Add New User</h2>
+        <form action="{{ url_for('add_user') }}" method="post">
+          <input
+            type="text"
+            name="new_user"
+            placeholder="Enter new user name"
+            required
+          />
+          <button type="submit">Add User</button>
+        </form>
       </div>
 
-      <!-- Form Section -->
+      <!-- Form to delete a user -->
       <div class="form-section">
-        <form action="/add" method="POST">
-          <div class="form-container">
-            <!--<input type="date" name="date" required class="date-input">-->
-            <div class="date-block" id="utcDate"></div>
-            <div class="entry-row">
-              <input type="text" name="saketh" placeholder="Saketh" />
-              <select name="saketh_difficulty">
-                <option value="None">Difficulty</option>
-                <option value="Easy" class="easy">Easy</option>
-                <option value="Medium" class="medium">Medium</option>
-                <option value="Hard" class="hard">Hard</option>
-              </select>
-            </div>
-            <div class="entry-row">
-              <input type="text" name="aditya" placeholder="Aditya" />
-              <select name="aditya_difficulty">
-                <option value="None">Difficulty</option>
-                <option value="Easy" class="easy">Easy</option>
-                <option value="Medium" class="medium">Medium</option>
-                <option value="Hard" class="hard">Hard</option>
-              </select>
-            </div>
-            <div class="entry-row">
-              <input type="text" name="kushagra" placeholder="Kushagra" />
-              <select name="kushagra_difficulty">
-                <option value="None">Difficulty</option>
-                <option value="Easy" class="easy">Easy</option>
-                <option value="Medium" class="medium">Medium</option>
-                <option value="Hard" class="hard">Hard</option>
-              </select>
-            </div>
-            <button type="submit">Add Entry</button>
-          </div>
+        <h2>Delete User</h2>
+        <form action="{{ url_for('delete_user') }}" method="post">
+          <select name="user_to_delete" required>
+            {% for user in users %}
+            <option value="{{ user }}">{{ user }}</option>
+            {% endfor %}
+          </select>
+          <button type="submit">Delete User</button>
         </form>
       </div>
     </div>
 
+    <div class="container">
+      <!-- Display data in table -->
+      <div class="container">
+        <div class="table-section">
+          <table>
+            <thead>
+              <tr>
+                <th>Date</th>
+                {% for user in users %}
+                <th>{{ user }}</th>
+                {% endfor %}
+              </tr>
+            </thead>
+            <tbody>
+              {% for entry in data %}
+              <tr>
+                <td class="date-cell">{{ entry['Date'] }}</td>
+                {% for user in users %}
+                <td
+                  class="{% if entry['User_questions'][user]|length > 0 %} Completed {% else %} Missed {% endif %}"
+                >
+                  {% if entry['User_questions'][user]|length > 0 %} {% for q,
+                  url, d in entry['User_questions'][user] %}
+                  <div class="question-container">
+                    <span
+                      class="delete-btn"
+                      onclick="deleteQuestion('{{ entry['Date'] }}', '{{ q }}', '{{ user }}')"
+                    ></span>
+                    <a href="{{ url }}" target="_blank" class="{{ d.strip() }}"
+                      >{{ q.split('.')[0] }}</a
+                    >
+                  </div>
+                  {% endfor %} {% else %} missed &#9785; {% endif %}
+                </td>
+                {% endfor %}
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="form-container">
+        <!-- Form to add questions -->
+        <div class="form-section">
+          <div class="date-block" id="utcDate"></div>
+          <form action="{{ url_for('add') }}" method="post">
+            {% for user in users %}
+            <div class="entry-row">
+              <label for="{{ user }}"> {{ user.upper() }}:</label>
+              <input
+                type="text"
+                name="{{ user.lower() }}"
+                placeholder="Question for {{ user }}"
+              />
+              <select name="{{ user.lower() }}_difficulty">
+                <option value="">Select Difficulty</option>
+                <option value="Easy">Easy</option>
+                <option value="Medium">Medium</option>
+                <option value="Hard">Hard</option>
+              </select>
+            </div>
+            {% endfor %}
+            <button type="submit">Add Questions</button>
+          </form>
+        </div>
+      </div>
+    </div>
     <script>
       document.getElementById("utcDate").innerText =
         "📅 " +
@@ -151,33 +123,71 @@
         }).format(new Date()) +
         " (LeetCodeTime - UTC)";
 
-      function deleteQuestion(date, question, role) {
-        if (confirm("Are you sure you want to delete this question?")) {
-          const form = document.createElement("form");
-          form.method = "POST";
-          form.action = "/delete_question";
+      // Get the list of users from the server
+      const users = {{ users | tojson }};
 
-          const dateInput = document.createElement("input");
-          dateInput.type = "hidden";
-          dateInput.name = "date";
-          dateInput.value = date;
-          form.appendChild(dateInput);
+      // Form validation script
+      const forms = document.querySelectorAll("form");
+      forms.forEach((form) => {
+        form.addEventListener("submit", function (event) {
+          event.preventDefault(); // Prevent default form submission
 
-          const questionInput = document.createElement("input");
-          questionInput.type = "hidden";
-          questionInput.name = "question";
-          questionInput.value = question;
-          form.appendChild(questionInput);
+          let isValid = true;
+          let errorMessages = [];
 
-          const roleInput = document.createElement("input");
-          roleInput.type = "hidden";
-          roleInput.name = "role";
-          roleInput.value = role;
-          form.appendChild(roleInput);
+          users.forEach(function(user) {
+            const userInput = form.querySelector(`input[name='${user.toLowerCase()}']`);
+            const userDifficulty = form.querySelector(`select[name='${user.toLowerCase()}_difficulty']`);
 
-          document.body.appendChild(form);
-          form.submit();
-        }
+            // Validate user's input
+            if (
+              userInput && userInput.value.trim() !== "" &&
+              (!userDifficulty || userDifficulty.value === "")
+            ) {
+              isValid = false;
+              errorMessages.push(`Please provide ${user}'s difficulty.`);
+            } else if (
+              userInput && userInput.value.trim() === "" &&
+              userDifficulty && userDifficulty.value !== ""
+            ) {
+              isValid = false;
+              errorMessages.push(`Please provide ${user}'s question.`);
+            }
+          });
+
+          if (isValid) {
+            form.submit(); // Submit the form if validation passes
+          } else {
+            alert(errorMessages.join("\n")); // Display error messages
+          }
+        });
+      });
+
+      function deleteQuestion(date, question, user) {
+        const form = document.createElement('form');
+        form.method = 'POST';
+        form.action = '{{ url_for("delete_question") }}';
+
+        const dateField = document.createElement('input');
+        dateField.type = 'hidden';
+        dateField.name = 'date';
+        dateField.value = date;
+        form.appendChild(dateField);
+
+        const questionField = document.createElement('input');
+        questionField.type = 'hidden';
+        questionField.name = 'question';
+        questionField.value = question;
+        form.appendChild(questionField);
+
+        const userField = document.createElement('input');
+        userField.type = 'hidden';
+        userField.name = 'user';
+        userField.value = user;
+        form.appendChild(userField);
+
+        document.body.appendChild(form);
+        form.submit();
       }
     </script>
   </body>
