@@ -18,13 +18,14 @@ h1 {
 .container {
   display: flex;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 20px auto;
   gap: 20px;
   align-items: flex-start;
   padding: 20px;
   background-color: #1f1f1f;
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  justify-content: space-around;
 }
 
 .table-section {
@@ -115,9 +116,11 @@ option.hard {
 .form-container {
   background-color: #2b2b2b;
   padding: 20px;
+  margin: 20px auto;
   border: 1px solid #555555;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  justify-content: space-around;
 }
 
 input[type="text"],
